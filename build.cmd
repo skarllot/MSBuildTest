@@ -11,5 +11,6 @@ set OutputPath=%SolutionDir%Output\portable
 set ObjOutputPath=%SolutionDir%Output\obj
 
 rmdir /s/q "%OutputPath%" 2> nul
+%SolutionDir%NuGet.exe restore MSBuildTest\project.json -NonInteractive
 %msbuild% %SolutionDir%%SolutionFile% /property:OutputPath=%OutputPath%\;BaseIntermediateOutputPath=%ObjOutputPath%\
 rmdir /s/q "%ObjOutputPath%"
